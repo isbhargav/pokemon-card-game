@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import { Box } from '@chakra-ui/core'
+import { Box, Skeleton } from '@chakra-ui/core'
 import Navbar from './Components/Navbar'
 import Search from './Components/Search'
 import Team from './Components/Team'
@@ -28,7 +28,7 @@ function App() {
   // load more
   useEffect(() => {
     if (intersection && intersection.intersectionRatio === 1) {
-      setOffset(s => s + 10)
+      setOffset(s => s + 20)
     }
   }, [intersection, setOffset])
 
@@ -37,11 +37,10 @@ function App() {
   return (
     <Box bg='grey.400'>
       <Navbar />
-      <Team />
+      <Team team={team} setTeam={setTeam} />
       <Search />
-      <Result data={pokedex} />
+      <Result data={pokedex} setTeam={setTeam} />
       <div ref={loadRef}></div>
-
     </Box>
 
   );
