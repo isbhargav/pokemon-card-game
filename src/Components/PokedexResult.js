@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Box, Image, Text, Flex, Button } from '@chakra-ui/core'
 
-export default function Result({ data, setTeam }) {
+export default function PokedexResult({ data, setTeam }) {
 
     const add = (d) => { setTeam(s => [...s, d]) };
 
