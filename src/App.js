@@ -38,7 +38,7 @@ function App() {
     <Box bg='grey.400'>
       <Navbar />
       <Team team={team} setTeam={setTeam} />
-      <Search />
+      <Search setPokedex={setPokedex} />
       <Result data={pokedex} setTeam={setTeam} />
       <div ref={loadRef}></div>
     </Box>
